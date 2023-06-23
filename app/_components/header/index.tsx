@@ -9,10 +9,10 @@ import Routes from './routes';
 
 export default function Header() {
   return (
-    <header className="container mx-auto flex items-center justify-between p-4 ">
+    <header className="container mx-auto flex items-center justify-between py-4 ">
       <nav className="flex gap-x-8">
         <Link href="/">
-          <Image src={logo} alt="logo" className="w-10 h-10" />
+          <Image src={logo} alt="logo" className="h-10 w-10" />
         </Link>
         <Routes />
       </nav>
@@ -20,7 +20,7 @@ export default function Header() {
         <Network />
         <Balance />
         <Address />
-        <button className="flex items-center justify-center border p-1 rounded-full">
+        <button className="flex items-center justify-center rounded-full p-1 hover:bg-white">
           <OptionIcon />
         </button>
       </div>

@@ -27,7 +27,10 @@ export default function Routes() {
           <li key={index} className="self-center">
             <Link
               href={path}
-              className={cl('flex items-center gap-x-2', isActive ? 'text-blue-700' : 'text-black')}
+              className={cl(
+                'flex items-center gap-x-2',
+                isActive ? 'text-blue-500' : 'text-gray-900 hover:text-blue-400'
+              )}
             >
               <Icon />
               <span>{name}</span>
