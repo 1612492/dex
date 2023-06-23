@@ -1,0 +1,32 @@
+{
+  "0xdac17f958d2ee523a2206206994597c13d831ec7": {
+    "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "name": "Tether USD",
+    "symbol": "USDT",
+    "decimals": 6
+  },
+  "0xB8c77482e45F1F44dE1745F52C74426C631bDD52": {
+    "address": "0xB8c77482e45F1F44dE1745F52C74426C631bDD52",
+    "name": "BNB",
+    "symbol": "BNB",
+    "decimals": 18
+  },
+  "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48": {
+    "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "name": "USD Coin",
+    "symbol": "USDC",
+    "decimals": 6
+  },
+  "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0": {
+    "address": "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
+    "name": "Matic Token",
+    "symbol": "MATIC",
+    "decimals": 18
+  },
+  "0x6B175474E89094C44Da98b954EedeAC495271d0F": {
+    "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+    "name": "Dai Stablecoin",
+    "symbol": "DAI",
+    "decimals": 18
+  }
+}
