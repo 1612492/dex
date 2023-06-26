@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import { Coin } from '_common/types';
+import CoinInput from '_components/input/coin';
+import ModeSelect from '_components/input/mode-select';
 import PenIcon from '_components/icon/pen';
 import ReloadIcon from '_components/icon/reload';
 import ReverseIcon from '_components/icon/reverse';
-import CoinInput from '_components/input/coin';
-import ModeSelect from './_components/mode-select';
 import coins from '_config/coins.json';
-import { Coin } from 'types';
 
 export default function Page() {
   const [amountIn, setAmountIn] = useState('');
@@ -37,7 +37,7 @@ export default function Page() {
           quickSelect
         />
         <div className="flex justify-center py-1">
-          <button className="rounded-lg p-2 text-blue-500 hover:bg-gray-100">
+          <button className="rounded-lg p-1 text-blue-500 hover:bg-gray-100">
             <ReverseIcon />
           </button>
         </div>
@@ -51,14 +51,16 @@ export default function Page() {
           onChangeAmount={(amount) => setAmountOut(amount)}
           inputProps={{ readOnly: true }}
         />
-        <div className="mb-4 mt-2 flex items-center justify-between px-2 text-sm">
-          <div className="flex items-center gap-x-2">
+        <div className="my-4 flex items-center justify-between px-2 text-sm">
+          <div className="flex items-center gap-x-1">
             <span>Slippage Tolerance</span>
-            <PenIcon />
+            <button className="rounded-lg p-2 text-blue-500 hover:bg-gray-100">
+              <PenIcon />
+            </button>
           </div>
           <span>0.5%</span>
         </div>
-        <button className="w-full rounded-xl bg-blue-500 py-3 text-white hover:bg-blue-400">
+        <button className="w-full rounded-xl bg-blue-500 py-3 text-lg text-white hover:bg-blue-400">
           Swap
         </button>
       </section>

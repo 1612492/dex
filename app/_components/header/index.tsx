@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import OptionIcon from '_components/icon/option';
 import logo from '_images/logo.png';
-import Balance from './balance';
 import Address from './address';
+import Balance from './balance';
 import Network from './network';
 import Routes from './routes';
 

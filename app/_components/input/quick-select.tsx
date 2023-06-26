@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import cl from '_utils/cl';
+import { merge } from '_utils/classes';
 
 export default function QuickSelect() {
   const [active, setActive] = useState(0);
@@ -10,7 +10,7 @@ export default function QuickSelect() {
         <button
           key={index}
           onClick={() => setActive(index)}
-          className={cl(
+          className={merge(
             'rounded-md px-2 py-1 text-xs',
             active === index
               ? 'bg-blue-500 text-white'

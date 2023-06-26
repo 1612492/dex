@@ -1,3 +1,3 @@
 export default function Page() {
-  return <h1>Farm</h1>;
+  return <div></div>;
 }

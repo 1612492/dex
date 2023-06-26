@@ -1,9 +1,9 @@
-import CoinIcon from '_components/icon/coin';
 import ChevronIcon from '_components/icon/chevron';
+import CoinIcon from '_components/icon/coin';
 import Modal from '_components/modal';
+import { Coin } from '_common/types';
 import { shorten } from '_utils/address';
-import { Coin } from 'types';
-import cl from '_utils/cl';
+import { merge } from '_utils/classes';
 
 type CoinListModalProps = {
   selectedCoin: Coin | null;
@@ -48,7 +48,7 @@ export default function CoinListModal({
                 onSelect(coin);
                 onClose();
               }}
-              className={cl(
+              className={merge(
                 'my-1 flex w-full items-center justify-between rounded-lg px-4 py-2 text-left hover:bg-gray-100',
                 active && 'bg-gray-100'
               )}

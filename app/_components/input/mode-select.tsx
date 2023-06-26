@@ -1,5 +1,5 @@
-import cl from '_utils/cl';
 import { useState } from 'react';
+import { merge } from '_utils/classes';
 
 export default function ModeSelect() {
   const [active, setActive] = useState(0);
@@ -10,9 +10,9 @@ export default function ModeSelect() {
         <button
           key={index}
           onClick={() => setActive(index)}
-          className={cl(
+          className={merge(
             'px-1',
-            active === index ? 'text-blue-500' : 'text-gray-500 hover:text-blue-400'
+            active === index ? 'text-blue-500' : 'text-gray-900 hover:text-blue-400'
           )}
         >
           {mode}

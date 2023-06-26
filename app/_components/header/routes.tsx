@@ -6,7 +6,7 @@ import FarmIcon from '_components/icon/farm';
 import HistoryIcon from '_components/icon/history';
 import PoolsIcon from '_components/icon/pools';
 import SwapIcon from '_components/icon/swap';
-import cl from '_utils/cl';
+import { merge } from '_utils/classes';
 
 const routes = [
   { name: 'Swap', path: '/', Icon: SwapIcon },
@@ -27,9 +27,9 @@ export default function Routes() {
           <li key={index} className="self-center">
             <Link
               href={path}
-              className={cl(
+              className={merge(
                 'flex items-center gap-x-2',
-                isActive ? 'text-blue-500' : 'text-gray-500 hover:text-blue-400'
+                isActive ? 'text-blue-500' : 'text-gray-900 hover:text-blue-400'
               )}
             >
               <Icon />
