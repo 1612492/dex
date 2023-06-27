@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import OptionIcon from '_components/icon/option';
+import OptionIcon from '_images/option.svg';
 import logo from '_images/logo.png';
 import Address from './address';
 import Balance from './balance';
@@ -20,7 +20,10 @@ export default function Header() {
         <Network />
         <Balance />
         <Address />
-        <button className="flex items-center justify-center rounded-full p-1 hover:bg-white">
+        <button
+          aria-label="setting"
+          className="flex items-center justify-center rounded-full p-1 hover:bg-white"
+        >
           <OptionIcon />
         </button>
       </div>

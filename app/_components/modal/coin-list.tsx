@@ -1,5 +1,5 @@
-import ChevronIcon from '_components/icon/chevron';
-import CoinIcon from '_components/icon/coin';
+import ChevronIcon from '_images/chevron.svg';
+import CoinIcon from '_components/coin-icon';
 import BaseModal from '_components/modal/base';
 import { Coin } from '_common/types';
 import { shorten } from '_utils/address';
@@ -24,10 +24,11 @@ export default function CoinListModal({
     <BaseModal open={open} onClose={onClose}>
       <header className="relative p-4 text-center text-gray-900">
         <button
+          aria-label="back"
           onClick={onClose}
           className="absolute bottom-2 left-2 top-2 rounded-lg px-3 hover:bg-gray-100"
         >
-          <ChevronIcon direction="left" />
+          <ChevronIcon className="-rotate-90" />
         </button>
         <span className="text-lg">Select a token</span>
       </header>
@@ -58,8 +59,10 @@ export default function CoinListModal({
                 <div>
                   <div className="text-lg font-medium text-gray-900">{coin.symbol}</div>
                   <div className="flex flex-col gap-x-1 gap-y-2 sm:flex-row sm:items-center">
-                    <div className="text-sm text-gray-500">{coin.name}</div>
-                    <div className="rounded bg-gray-200 px-2 text-xs">{shorten(coin.address)}</div>
+                    <div className="text-sm text-gray-600">{coin.name}</div>
+                    <div className="rounded bg-gray-200 px-2 text-xs text-gray-900">
+                      {shorten(coin.address)}
+                    </div>
                   </div>
                 </div>
               </div>

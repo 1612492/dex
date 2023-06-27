@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import FarmIcon from '_components/icon/farm';
-import HistoryIcon from '_components/icon/history';
-import PoolsIcon from '_components/icon/pools';
-import SwapIcon from '_components/icon/swap';
+import FarmIcon from '_images/farm.svg';
+import HistoryIcon from '_images/history.svg';
+import PoolsIcon from '_images/pools.svg';
+import SwapIcon from '_images/swap.svg';
 import { merge } from '_utils/classes';
 
 const routes = [
@@ -29,7 +29,7 @@ export default function Routes() {
               href={path}
               className={merge(
                 'flex items-center gap-x-2',
-                isActive ? 'text-blue-500' : 'text-gray-900 hover:text-blue-400'
+                isActive ? 'text-blue-800' : 'text-gray-900 hover:text-blue-800'
               )}
             >
               <Icon />

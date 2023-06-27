@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { Coin } from '_common/types';
 import CoinInput from '_components/input/coin-input';
 import ModeSelect from './_components/mode-select';
-import ReloadIcon from '_components/icon/reload';
-import ReverseIcon from '_components/icon/reverse';
+import ReloadIcon from '_images/reload.svg';
 import coins from '_config/coins.json';
+import ReverseIcon from '_images/reverse.svg';
 import Slippage from './_components/slippage';
 
 export default function Page() {
@@ -21,7 +21,7 @@ export default function Page() {
         <div className="mb-2 flex items-center justify-between">
           <ModeSelect />
           <div className="flex items-center">
-            <button className="rounded-lg p-2 hover:bg-gray-100">
+            <button aria-label="reload" className="rounded-lg p-2 hover:bg-gray-100">
               <ReloadIcon />
             </button>
           </div>
@@ -37,7 +37,7 @@ export default function Page() {
           quickSelect
         />
         <div className="flex justify-center py-1">
-          <button className="rounded-lg p-1 text-blue-500 hover:bg-gray-100">
+          <button aria-label="reverse" className="rounded-lg p-1 text-blue-800 hover:bg-gray-100">
             <ReverseIcon />
           </button>
         </div>
@@ -52,7 +52,7 @@ export default function Page() {
           inputProps={{ readOnly: true }}
         />
         <Slippage />
-        <button className="w-full rounded-xl bg-blue-500 py-3 text-lg text-white hover:bg-blue-400">
+        <button className="w-full rounded-xl bg-blue-800 py-3 text-lg text-white hover:bg-blue-900">
           Swap
         </button>
       </section>

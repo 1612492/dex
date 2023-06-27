@@ -1,7 +1,7 @@
 'use client';
 
 import { Fragment, useState } from 'react';
-import PenIcon from '_components/icon/pen';
+import PenIcon from '_images/pen.svg';
 import SlippageModal from './slippage-modal';
 
 export default function Slippage() {
@@ -13,8 +13,9 @@ export default function Slippage() {
         <div className="flex items-center gap-x-1">
           <span>Slippage Tolerance</span>
           <button
+            aria-label="edit"
             onClick={() => setOpen(true)}
-            className="rounded-lg p-2 text-blue-500 hover:bg-gray-100"
+            className="rounded-lg p-2 text-blue-800 hover:bg-gray-100"
           >
             <PenIcon />
           </button>

@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import ChevronIcon from '_components/icon/chevron';
-import CoinIcon from '_components/icon/coin';
+import ChevronIcon from '_images/chevron.svg';
+import CoinIcon from '_components/coin-icon';
 import CoinListModal from '_components/modal/coin-list';
 import QuickSelect from '_components/input/quick-select';
 import { Coin } from '_common/types';
@@ -36,7 +36,7 @@ export default function CoinInput({
     <Fragment>
       <article className="rounded-lg bg-gray-100 px-3 py-3">
         <div className="flex items-center gap-x-3">
-          <div className="text-sm text-gray-500">{label}</div>
+          <div className="text-sm text-gray-900">{label}</div>
           {quickSelect ? <QuickSelect /> : null}
         </div>
         <article className="my-1 flex">
@@ -49,7 +49,7 @@ export default function CoinInput({
           />
           <button
             onClick={() => setOpen(true)}
-            className="flex h-10 items-center gap-x-2 rounded-lg bg-white px-2 py-1 hover:bg-blue-400 hover:text-gray-100"
+            className="flex h-10 items-center gap-x-2 rounded-lg bg-white px-2 py-1 hover:bg-blue-800 hover:text-gray-100"
           >
             {coin ? (
               <div className="flex items-center gap-x-2">
@@ -59,10 +59,10 @@ export default function CoinInput({
             ) : (
               <div className="text-sm">Select token</div>
             )}
-            <ChevronIcon direction="down" />
+            <ChevronIcon className="rotate-180" />
           </button>
         </article>
-        <div className="text-sm text-gray-500">Balance: {balance}</div>
+        <div className="text-sm text-gray-900">Balance: {balance}</div>
       </article>
       <CoinListModal
         coins={coins}

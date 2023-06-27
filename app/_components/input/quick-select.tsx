@@ -13,8 +13,8 @@ export default function QuickSelect() {
           className={merge(
             'rounded-md px-2 py-1 text-xs',
             active === index
-              ? 'bg-blue-500 text-white'
-              : 'bg-white text-gray-900 hover:bg-blue-400 hover:text-white'
+              ? 'bg-blue-800 text-white'
+              : 'bg-white text-gray-900 hover:bg-blue-800 hover:text-white'
           )}
         >
           {value}

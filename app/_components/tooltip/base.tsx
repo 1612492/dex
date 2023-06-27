@@ -7,10 +7,11 @@ type BaseTooltipProps = {
 };
 
 export default function BaseTooltip({ children, hint }: BaseTooltipProps) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <button
+      aria-label="tooltip"
       onMouseMove={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
       className="relative flex items-center justify-center"

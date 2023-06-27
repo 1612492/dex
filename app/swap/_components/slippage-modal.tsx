@@ -1,8 +1,8 @@
-import ChevronIcon from '_components/icon/chevron';
-import InfoIcon from '_components/icon/info';
+import ChevronIcon from '_images/chevron.svg';
 import QuickSelect from '_components/input/quick-select';
 import BaseModal from '_components/modal/base';
 import BaseTooltip from '_components/tooltip/base';
+import InfoIcon from '_images/info.svg';
 
 type SlippageModalProps = {
   open: boolean;
@@ -17,7 +17,7 @@ export default function SlippageModal({ open, onClose }: SlippageModalProps) {
           onClick={onClose}
           className="absolute bottom-2 left-2 top-2 rounded-lg px-3 hover:bg-gray-100"
         >
-          <ChevronIcon direction="left" />
+          <ChevronIcon className="-rotate-90" />
         </button>
         <span className="text-lg">Settings</span>
       </header>
