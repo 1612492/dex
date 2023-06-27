@@ -1,7 +1,7 @@
-import ChevronIcon from '_images/chevron.svg';
+import { Coin } from '_common/types';
 import CoinIcon from '_components/coin-icon';
 import BaseModal from '_components/modal/base';
-import { Coin } from '_common/types';
+import ChevronIcon from '_images/chevron.svg';
 import { shorten } from '_utils/address';
 import { merge } from '_utils/classes';
 

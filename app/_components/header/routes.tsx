@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
 import FarmIcon from '_images/farm.svg';
 import HistoryIcon from '_images/history.svg';
 import PoolsIcon from '_images/pools.svg';

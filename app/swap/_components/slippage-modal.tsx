@@ -1,7 +1,7 @@
-import ChevronIcon from '_images/chevron.svg';
 import QuickSelect from '_components/input/quick-select';
 import BaseModal from '_components/modal/base';
 import BaseTooltip from '_components/tooltip/base';
+import ChevronIcon from '_images/chevron.svg';
 import InfoIcon from '_images/info.svg';
 
 type SlippageModalProps = {

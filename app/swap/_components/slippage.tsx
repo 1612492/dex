@@ -1,7 +1,9 @@
 'use client';
 
 import { Fragment, useState } from 'react';
+
 import PenIcon from '_images/pen.svg';
+
 import SlippageModal from './slippage-modal';
 
 export default function Slippage() {

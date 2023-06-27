@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { merge } from '_utils/classes';
 
 export default function QuickSelect() {

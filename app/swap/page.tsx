@@ -1,12 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+
 import { Coin } from '_common/types';
 import CoinInput from '_components/input/coin-input';
-import ModeSelect from './_components/mode-select';
-import ReloadIcon from '_images/reload.svg';
 import coins from '_config/coins.json';
+import ReloadIcon from '_images/reload.svg';
 import ReverseIcon from '_images/reverse.svg';
+
+import ModeSelect from './_components/mode-select';
 import Slippage from './_components/slippage';
 
 export default function Page() {

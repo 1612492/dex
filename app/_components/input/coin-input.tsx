@@ -1,9 +1,10 @@
 import { Fragment, useState } from 'react';
-import ChevronIcon from '_images/chevron.svg';
-import CoinIcon from '_components/coin-icon';
-import CoinListModal from '_components/modal/coin-list';
-import QuickSelect from '_components/input/quick-select';
+
 import { Coin } from '_common/types';
+import CoinIcon from '_components/coin-icon';
+import QuickSelect from '_components/input/quick-select';
+import CoinListModal from '_components/modal/coin-list';
+import ChevronIcon from '_images/chevron.svg';
 
 type CoinInputProps = {
   label: string;

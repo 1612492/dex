@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from 'next/image';
+
 import bnb from '_images/bnb.png';
 import dai from '_images/dai.png';
 import matic from '_images/matic.png';

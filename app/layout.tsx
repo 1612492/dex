@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
+
 import Header from '_components/header';
 import { merge } from '_utils/classes';
 import './globals.css';

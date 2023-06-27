@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import eth from '_images/eth.png';
 
 export default function Balance() {
