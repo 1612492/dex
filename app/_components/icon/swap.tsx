@@ -6,21 +6,7 @@ export default function Icon() {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.5}
-        d="M14.167.833 17.5 4.167 14.167 7.5"
-      />
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={1.5}
-        d="M2.5 9.167V7.5a3.333 3.333 0 0 1 3.333-3.333H17.5M5.833 19.167 2.5 15.833 5.833 12.5"
-      />
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={1.5}
-        d="M17.5 10.833V12.5a3.333 3.333 0 0 1-3.333 3.333H2.5"
+        d="m9.375 9.375.034-.017a.625.625 0 0 1 .886.71l-.59 2.364a.625.625 0 0 0 .886.71l.034-.017M17.5 10a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0ZM10 6.875h.007v.007H10v-.007Z"
       />
     </svg>
   );

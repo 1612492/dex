@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 import { Coin } from '_common/types';
-import CoinInput from '_components/input/coin';
-import ModeSelect from '_components/input/mode-select';
-import PenIcon from '_components/icon/pen';
+import CoinInput from '_components/input/coin-input';
+import ModeSelect from './_components/mode-select';
 import ReloadIcon from '_components/icon/reload';
 import ReverseIcon from '_components/icon/reverse';
 import coins from '_config/coins.json';
+import Slippage from './_components/slippage';
 
 export default function Page() {
   const [amountIn, setAmountIn] = useState('');
@@ -51,15 +51,7 @@ export default function Page() {
           onChangeAmount={(amount) => setAmountOut(amount)}
           inputProps={{ readOnly: true }}
         />
-        <div className="my-4 flex items-center justify-between px-2 text-sm">
-          <div className="flex items-center gap-x-1">
-            <span>Slippage Tolerance</span>
-            <button className="rounded-lg p-2 text-blue-500 hover:bg-gray-100">
-              <PenIcon />
-            </button>
-          </div>
-          <span>0.5%</span>
-        </div>
+        <Slippage />
         <button className="w-full rounded-xl bg-blue-500 py-3 text-lg text-white hover:bg-blue-400">
           Swap
         </button>

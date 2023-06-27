@@ -49,7 +49,7 @@ export default function CoinInput({
           />
           <button
             onClick={() => setOpen(true)}
-            className="flex h-10 items-center gap-x-2 rounded-lg bg-white px-2 py-1 hover:bg-gray-400 hover:text-gray-100"
+            className="flex h-10 items-center gap-x-2 rounded-lg bg-white px-2 py-1 hover:bg-blue-400 hover:text-gray-100"
           >
             {coin ? (
               <div className="flex items-center gap-x-2">

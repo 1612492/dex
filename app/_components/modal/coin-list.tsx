@@ -1,6 +1,6 @@
 import ChevronIcon from '_components/icon/chevron';
 import CoinIcon from '_components/icon/coin';
-import Modal from '_components/modal';
+import BaseModal from '_components/modal/base';
 import { Coin } from '_common/types';
 import { shorten } from '_utils/address';
 import { merge } from '_utils/classes';
@@ -21,7 +21,7 @@ export default function CoinListModal({
   onSelect,
 }: CoinListModalProps) {
   return (
-    <Modal open={open} onClose={onClose}>
+    <BaseModal open={open} onClose={onClose}>
       <header className="relative p-4 text-center text-gray-900">
         <button
           onClick={onClose}
@@ -68,6 +68,6 @@ export default function CoinListModal({
           );
         })}
       </section>
-    </Modal>
+    </BaseModal>
   );
 }
