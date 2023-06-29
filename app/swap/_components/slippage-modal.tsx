@@ -17,30 +17,27 @@ export default function SlippageModal({ open, onClose }: SlippageModalProps) {
           onClick={onClose}
           className="absolute bottom-2 left-2 top-2 rounded-lg px-3 hover:bg-gray-100"
         >
-          <ChevronIcon className="-rotate-90" />
+          <ChevronIcon className="h-4 w-4 -rotate-90 text-gray-900 md:h-5 md:w-5" />
         </button>
-        <span className="text-lg">Settings</span>
+        <span className="text-base text-gray-900 sm:text-lg">Settings</span>
       </header>
       <div className="p-4">
-        <div className="mb-4 flex items-center justify-between">
+        <div className="mb-2 flex items-center justify-between">
           <div className="flex items-center gap-x-1">
-            <h2>Slippage Tolerance</h2>
+            <div className="text-sm sm:text-base">Slippage Tolerance</div>
             <BaseTooltip
               hint="Your transaction will revert if the price changes unfavorably by more than this
           percentage."
             >
-              <InfoIcon className="text-gray-900" />
+              <InfoIcon className="h-3 w-3 text-gray-900 md:h-5 md:w-5" />
             </BaseTooltip>
           </div>
           <QuickSelect />
         </div>
         <section className="mb-4">
-          <input
-            placeholder="Search by name or address"
-            className="w-full rounded-lg border border-gray-400 px-4 py-3"
-          />
+          <input className="w-full rounded-lg border border-gray-400 px-4 py-3 text-sm outline-blue-800 sm:text-lg" />
         </section>
-        <button className="w-full rounded-xl bg-blue-500 py-3 text-lg text-white hover:bg-blue-400">
+        <button className="w-full rounded-xl bg-blue-800 py-3 text-xs text-white hover:bg-blue-900 sm:text-sm lg:text-base">
           Save
         </button>
       </div>

@@ -19,10 +19,9 @@ export default function BaseTooltip({ children, hint }: BaseTooltipProps) {
     >
       {children}
       <div
-        style={{ visibility: isOpen ? 'visible' : 'hidden' }}
         className={merge(
           'absolute -right-2 top-6 z-10 min-w-[10rem] select-text rounded bg-gray-400 p-2 text-left text-xs text-gray-100 duration-300',
-          isOpen ? 'scale-100 opacity-100' : 'scale-75 opacity-0'
+          isOpen ? 'visible scale-100 opacity-100' : 'invisible scale-75 opacity-0'
         )}
       >
         {hint}

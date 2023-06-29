@@ -13,6 +13,7 @@ export default function ModeSelect() {
           onClick={() => setActive(index)}
           className={merge(
             'px-1',
+            'text-sm sm:text-base',
             active === index ? 'text-blue-800' : 'text-gray-900 hover:text-blue-800'
           )}
         >

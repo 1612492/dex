@@ -20,12 +20,12 @@ export default function Routes() {
   const pathname = usePathname();
 
   return (
-    <ul className="flex gap-x-2 md:gap-x-4 lg:gap-x-6">
+    <ul className="flex items-center justify-evenly gap-x-4 lg:gap-x-6">
       {routes.map(({ name, path, Icon }, index) => {
         const isActive = path === pathname;
 
         return (
-          <li key={index} className="self-center">
+          <li key={index}>
             <Link
               href={path}
               className={merge(
@@ -33,7 +33,7 @@ export default function Routes() {
                 isActive ? 'text-blue-800' : 'text-gray-900 hover:text-blue-800'
               )}
             >
-              <Icon className="h-3 w-3 md:h-5 md:w-5" />
+              <Icon className="h-5 w-5" />
               <span>{name}</span>
             </Link>
           </li>

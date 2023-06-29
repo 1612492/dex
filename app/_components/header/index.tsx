@@ -1,7 +1,6 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
-import logo from '_images/logo.png';
+import Logo from '_images/logo.svg';
 import OptionIcon from '_images/option.svg';
 
 import Address from './address';
@@ -11,12 +10,14 @@ import Routes from './routes';
 
 export default function Header() {
   return (
-    <header className="container mx-auto flex items-center justify-between py-4 ">
-      <nav className="flex gap-x-8">
+    <header className="container mx-auto flex items-center justify-between px-4 py-4 md:px-0">
+      <nav className="flex md:gap-x-8">
         <Link href="/">
-          <Image src={logo} alt="logo" className="h-10 w-10" />
+          <Logo className="h-8 w-8 text-blue-800" />
         </Link>
-        <Routes />
+        <div className="hidden md:flex">
+          <Routes />
+        </div>
       </nav>
       <div className="flex items-center gap-x-2">
         <Network />
@@ -24,9 +25,9 @@ export default function Header() {
         <Address />
         <button
           aria-label="setting"
-          className="flex items-center justify-center rounded-full p-1 hover:bg-white"
+          className="flex items-center justify-center rounded-full p-1 text-gray-900 hover:bg-white"
         >
-          <OptionIcon />
+          <OptionIcon className="h-3 w-3 md:h-5 md:w-5" />
         </button>
       </div>
     </header>

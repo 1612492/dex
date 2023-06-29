@@ -2,7 +2,7 @@
 
 import { Fragment, useState } from 'react';
 
-import PenIcon from '_images/pen.svg';
+import EditIcon from '_images/edit.svg';
 
 import SlippageModal from './slippage-modal';
 
@@ -13,16 +13,16 @@ export default function Slippage() {
     <Fragment>
       <div className="my-4 flex items-center justify-between px-2 text-sm">
         <div className="flex items-center gap-x-1">
-          <span>Slippage Tolerance</span>
+          <span className="text-xs text-gray-900 sm:text-sm">Slippage Tolerance</span>
           <button
             aria-label="edit"
             onClick={() => setOpen(true)}
-            className="rounded-lg p-2 text-blue-800 hover:bg-gray-100"
+            className="rounded-lg p-1 text-blue-800 hover:bg-gray-100"
           >
-            <PenIcon />
+            <EditIcon className="h-3 w-3 md:h-4 md:w-4" />
           </button>
         </div>
-        <span>0.5%</span>
+        <span className="text-xs text-gray-900 sm:text-sm">0.5%</span>
       </div>
       <SlippageModal open={open} onClose={() => setOpen(false)} />
     </Fragment>

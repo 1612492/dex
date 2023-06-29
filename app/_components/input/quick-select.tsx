@@ -12,7 +12,7 @@ export default function QuickSelect() {
           key={index}
           onClick={() => setActive(index)}
           className={merge(
-            'rounded-md px-2 py-1 text-xs',
+            'rounded p-1 text-xs',
             active === index
               ? 'bg-blue-800 text-white'
               : 'bg-white text-gray-900 hover:bg-blue-800 hover:text-white'

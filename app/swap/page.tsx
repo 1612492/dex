@@ -18,13 +18,13 @@ export default function Page() {
   const [coinOut, setCoinOut] = useState<Coin | null>(null);
 
   return (
-    <section className="container mx-auto">
-      <section className="mx-auto mt-8 rounded-xl bg-white p-4 sm:max-w-md">
+    <section className="mx-auto px-4 py-4 md:container md:px-0">
+      <section className="mx-auto rounded-xl bg-white p-4 sm:max-w-md md:mt-8">
         <div className="mb-2 flex items-center justify-between">
           <ModeSelect />
           <div className="flex items-center">
-            <button aria-label="reload" className="rounded-lg p-2 hover:bg-gray-100">
-              <ReloadIcon />
+            <button aria-label="reload" className="rounded-lg p-2 text-gray-900 hover:bg-gray-100">
+              <ReloadIcon className="h-3 w-3 md:h-5 md:w-5" />
             </button>
           </div>
         </div>
@@ -40,7 +40,7 @@ export default function Page() {
         />
         <div className="flex justify-center py-1">
           <button aria-label="reverse" className="rounded-lg p-1 text-blue-800 hover:bg-gray-100">
-            <ReverseIcon />
+            <ReverseIcon className="h-3 w-3 md:h-5 md:w-5" />
           </button>
         </div>
         <CoinInput
@@ -54,7 +54,7 @@ export default function Page() {
           inputProps={{ readOnly: true }}
         />
         <Slippage />
-        <button className="w-full rounded-xl bg-blue-800 py-3 text-lg text-white hover:bg-blue-900">
+        <button className="w-full rounded-xl bg-blue-800 py-3 text-xs text-white hover:bg-blue-900 sm:text-sm lg:text-base">
           Swap
         </button>
       </section>

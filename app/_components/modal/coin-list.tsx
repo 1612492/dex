@@ -22,20 +22,20 @@ export default function CoinListModal({
 }: CoinListModalProps) {
   return (
     <BaseModal open={open} onClose={onClose}>
-      <header className="relative p-4 text-center text-gray-900">
+      <header className="relative p-4 text-center">
         <button
           aria-label="back"
           onClick={onClose}
           className="absolute bottom-2 left-2 top-2 rounded-lg px-3 hover:bg-gray-100"
         >
-          <ChevronIcon className="-rotate-90" />
+          <ChevronIcon className="h-4 w-4 -rotate-90 text-gray-900 md:h-5 md:w-5" />
         </button>
-        <span className="text-lg">Select a token</span>
+        <span className="text-base text-gray-900 sm:text-lg">Select a token</span>
       </header>
       <section className="px-4 pb-2">
         <input
           placeholder="Search by name or address"
-          className="w-full rounded-lg border border-gray-400 px-4 py-3"
+          className="w-full rounded-lg border border-gray-400 px-4 py-3 text-sm outline-blue-800 sm:text-lg"
         />
       </section>
       <section className="px-4 pb-4">
@@ -55,18 +55,18 @@ export default function CoinListModal({
               )}
             >
               <div className="flex items-center gap-x-2">
-                <CoinIcon name={coin.symbol} className="h-8 w-8" />
+                <CoinIcon name={coin.symbol} className="h-6 w-6 md:h-8 md:w-8" />
                 <div>
-                  <div className="text-lg font-medium text-gray-900">{coin.symbol}</div>
+                  <div className="text-sm font-medium text-gray-900 sm:text-lg">{coin.symbol}</div>
                   <div className="flex flex-col gap-x-1 gap-y-2 sm:flex-row sm:items-center">
-                    <div className="text-sm text-gray-600">{coin.name}</div>
+                    <div className="text-xs text-gray-600 sm:text-sm">{coin.name}</div>
                     <div className="rounded bg-gray-200 px-2 text-xs text-gray-900">
                       {shorten(coin.address)}
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="text-lg">100</div>
+              <div className="text-sm sm:text-lg">100</div>
             </button>
           );
         })}

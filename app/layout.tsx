@@ -1,8 +1,10 @@
 import { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 
+import Footer from '_components/footer';
 import Header from '_components/header';
 import { merge } from '_utils/classes';
+
 import './globals.css';
 
 const poppins = Poppins({ weight: ['400', '500', '700'], subsets: ['latin'] });
@@ -35,9 +37,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={merge(poppins.className, 'bg-gray-100')}>
+      <body className={merge(poppins.className, 'flex h-screen flex-col bg-gray-100')}>
         <Header />
-        {children}
+        <main className="flex-1 overflow-y-auto">{children}</main>
+        <Footer />
       </body>
     </html>
   );
