@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={merge(poppins.className, 'flex h-screen flex-col bg-gray-100')}>
+      <body className={poppins.className}>
         <Header />
         <main className="flex-1 overflow-y-auto">{children}</main>
         <Footer />

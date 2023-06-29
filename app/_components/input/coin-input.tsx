@@ -50,15 +50,15 @@ export default function CoinInput({
           />
           <button
             onClick={() => setOpen(true)}
-            className="flex h-8 min-w-fit items-center gap-x-2 rounded-lg bg-white px-2 py-1 hover:bg-blue-800 hover:text-gray-100 sm:h-10"
+            className="flex h-8 min-w-fit items-center gap-x-2 rounded-lg bg-white px-2 py-1 hover:bg-blue-800 hover:text-white sm:h-10"
           >
             {coin ? (
               <div className="flex items-center gap-x-2">
                 <CoinIcon name={coin.symbol} className="h-6 w-6 md:h-8 md:w-8" />
-                <span className="text-xs text-gray-900 sm:text-sm">{coin.symbol}</span>
+                <span className="text-xs sm:text-sm">{coin.symbol}</span>
               </div>
             ) : (
-              <div className="text-xs text-gray-900 sm:text-sm">Select token</div>
+              <div className="text-xs sm:text-sm">Select token</div>
             )}
             <ChevronIcon className="h-3 w-3 rotate-180 md:h-5 md:w-5" />
           </button>

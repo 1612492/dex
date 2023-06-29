@@ -1,10 +1,10 @@
 import Image, { StaticImageData } from 'next/image';
 
-import bnb from '_images/bnb.png';
-import dai from '_images/dai.png';
-import matic from '_images/matic.png';
-import usdc from '_images/usdc.png';
-import usdt from '_images/usdt.png';
+import bnb from '_images/bnb.svg?raw';
+import dai from '_images/dai.svg?raw';
+import matic from '_images/matic.svg?raw';
+import usdc from '_images/usdc.svg?raw';
+import usdt from '_images/usdt.svg?raw';
 
 const tokens: Record<string, StaticImageData> = {
   BNB: bnb,

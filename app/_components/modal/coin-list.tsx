@@ -38,7 +38,7 @@ export default function CoinListModal({
           className="w-full rounded-lg border border-gray-400 px-4 py-3 text-sm outline-blue-800 sm:text-lg"
         />
       </section>
-      <section className="px-4 pb-4">
+      <section className="modal-content overflow-y-auto px-4 pb-4">
         {coins.map((coin) => {
           const active = selectedCoin && selectedCoin.address === coin.address;
 

@@ -24,7 +24,7 @@ export default function BaseModal({ open, onClose, children }: BaseModalProps) {
         role="presentation"
         onClick={(e) => e.stopPropagation()}
         className={merge(
-          'mx-2 my-2 min-h-min w-full max-w-md overflow-y-auto rounded-lg bg-white shadow-xl duration-300 sm:my-8',
+          'mx-2 my-2 min-h-min w-full max-w-md rounded-lg bg-white shadow-xl duration-300 sm:my-8',
           open ? 'scale-100 opacity-100' : 'scale-75 opacity-0'
         )}
       >
