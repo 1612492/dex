@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={poppins.className}>
         <Header />
-        <main className="flex-1 overflow-y-auto">{children}</main>
+        <main className="main">{children}</main>
         <Footer />
       </body>
     </html>

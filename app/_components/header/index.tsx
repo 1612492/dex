@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import Logo from '_images/logo.svg';
 import OptionIcon from '_images/option.svg';
+import { merge } from '_utils/classes';
 
 import Address from './address';
 import Balance from './balance';
@@ -10,7 +11,7 @@ import Routes from './routes';
 
 export default function Header() {
   return (
-    <header className="container mx-auto flex items-center justify-between px-4 py-4 md:px-0">
+    <header className="mx-auto flex h-16 w-full max-w-md items-center justify-between px-4 md:container">
       <nav className="flex md:gap-x-8">
         <Link href="/">
           <Logo className="h-8 w-8 text-blue-800" />

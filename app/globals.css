@@ -3,10 +3,23 @@
 @tailwind utilities;
 
 body {
-  @apply flex flex-col bg-gray-100;
+  @apply overflow-hidden bg-gray-100;
   min-height: 100dvh;
 }
 
 .modal-content {
-  max-height: calc(100vh - 8rem);
+  max-height: calc(100vh - theme(height.32));
+
+  @media screen(sm) {
+    max-height: calc(100dvh - theme(height.52));
+  }
+}
+
+.main {
+  @apply overflow-y-auto;
+  max-height: calc(100dvh - theme(height.16) - theme(height.20));
+
+  @media screen(md) {
+    max-height: calc(100dvh - theme(height.16));
+  }
 }

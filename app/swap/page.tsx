@@ -19,7 +19,7 @@ export default function Page() {
 
   return (
     <section className="mx-auto px-4 py-4 md:container md:px-0">
-      <section className="mx-auto rounded-xl bg-white p-4 sm:max-w-md md:mt-8">
+      <section className="mx-auto max-w-md rounded-xl bg-white p-4 md:mt-8">
         <div className="mb-2 flex items-center justify-between">
           <ModeSelect />
           <div className="flex items-center">

@@ -35,7 +35,7 @@ export default function CoinListModal({
       <section className="px-4 pb-2">
         <input
           placeholder="Search by name or address"
-          className="w-full rounded-lg border border-gray-400 px-4 py-3 text-sm outline-blue-800 sm:text-lg"
+          className="w-full rounded-lg border border-gray-400 px-4 py-3 text-sm sm:text-lg"
         />
       </section>
       <section className="modal-content overflow-y-auto px-4 pb-4">
