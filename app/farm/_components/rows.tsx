@@ -7,13 +7,11 @@ import CurveIcon from '_components/curve-icon';
 import pools from '_config/pools.json';
 
 const stats = [
-  { name: 'Total liquidity', value: '$100,000' },
-  { name: 'Volume 24h', value: '$50,000' },
-  { name: 'Volume 7d', value: '$10,000' },
-  { name: 'Fees 7d', value: '$10,000' },
-  { name: 'Fee tier', value: '0.3%' },
+  { name: 'Locked liquidity', value: '100,000,000' },
+  { name: 'Daily Emission', value: '50,000' },
+  { name: 'Staked', value: '10,000' },
+  { name: 'Pending reward', value: '10,000' },
   { name: 'Your LP', value: '0' },
-  { name: 'Pool shared', value: '0%' },
 ];
 
 export default function Rows() {
@@ -23,20 +21,28 @@ export default function Rows() {
         <BaseAccordion key={address}>
           {(isOpen) => (
             <Fragment>
-              <section className="grid w-full grid-cols-2 gap-y-2 sm:grid-cols-3 sm:gap-4 md:grid-cols-4">
-                <header className="col-span-2 flex sm:col-span-1">
-                  <div className="flex">
-                    <CoinIcon name={coinX} />
-                    <CoinIcon name={coinY} className="relative right-4" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="font-medium text-blue-800">{name}</span>
-                    <div className="flex items-center gap-x-1 text-gray-900">
-                      <CurveIcon name={curve} className="h-3 w-3" />
-                      <span className="text-sm">{curve}</span>
+              <section className="grid w-full grid-cols-2 gap-y-2 sm:grid-cols-3 lg:grid-cols-4 sm:gap-4">
+                <header className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <div className="flex">
+                      <CoinIcon name={coinX} className="relative -top-4 w-8" />
+                      <CoinIcon name={coinY} className="relative right-4" />
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="font-medium text-blue-800">{name}</span>
+                      <div className="flex items-center gap-x-1 text-gray-900">
+                        <CurveIcon name={curve} className="h-3 w-3" />
+                        <span className="text-sm">{curve}</span>
+                      </div>
                     </div>
                   </div>
                 </header>
+
+                <article>
+                  <div className="text-sm text-gray-400">APR</div>
+                  <div className="text-xl text-green-500">300%</div>
+                </article>
+
                 {stats.map(({ name, value }, index) => (
                   <article key={index}>
                     <div className="text-sm text-gray-400">{name}</div>
@@ -44,7 +50,7 @@ export default function Rows() {
                   </article>
                 ))}
               </section>
-              <section className="flex justify-end gap-x-2 sm:mt-4">
+              <section className="mt-4 flex justify-end gap-x-2">
                 <button
                   {...(!isOpen && { tabIndex: -1 })}
                   className="rounded-lg bg-red-400 px-4 py-2 text-xs text-white hover:bg-red-500 sm:w-40 sm:text-sm"
@@ -55,7 +61,13 @@ export default function Rows() {
                   {...(!isOpen && { tabIndex: -1 })}
                   className="rounded-lg bg-blue-800 px-4 py-2 text-xs text-white hover:bg-blue-900 sm:w-40 sm:text-sm"
                 >
-                  Deposit
+                  Harvest
+                </button>
+                <button
+                  {...(!isOpen && { tabIndex: -1 })}
+                  className="rounded-lg bg-blue-800 px-4 py-2 text-xs text-white hover:bg-blue-900 sm:w-40 sm:text-sm"
+                >
+                  Stake
                 </button>
               </section>
             </Fragment>

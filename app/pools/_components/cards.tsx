@@ -15,7 +15,7 @@ const stats = [
 
 export default function Cards() {
   return (
-    <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <section className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
       {Object.values(pools).map(({ address, name, coinX, coinY, curve }) => (
         <article key={address} className="rounded bg-white p-4">
           <header className="flex">
@@ -42,11 +42,11 @@ export default function Cards() {
               </div>
             ))}
           </section>
-          <section className="flex gap-x-2 mt-4">
-            <button className="flex-1 rounded-lg bg-red-400 py-2 text-xs text-white hover:bg-red-500 sm:text-sm lg:text-base">
+          <section className="mt-4 flex gap-x-2">
+            <button className="flex-1 rounded-lg bg-red-400 py-2 text-xs text-white hover:bg-red-500 sm:text-sm">
               Withdraw
             </button>
-            <button className="flex-1 rounded-lg bg-blue-800 py-2 text-xs text-white hover:bg-blue-900 sm:text-sm lg:text-base">
+            <button className="flex-1 rounded-lg bg-blue-800 py-2 text-xs text-white hover:bg-blue-900 sm:text-sm">
               Deposit
             </button>
           </section>
