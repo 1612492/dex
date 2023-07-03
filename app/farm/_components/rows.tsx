@@ -21,22 +21,20 @@ export default function Rows() {
         <BaseAccordion key={address}>
           {(isOpen) => (
             <Fragment>
-              <section className="grid w-full grid-cols-2 gap-y-2 sm:grid-cols-3 lg:grid-cols-4 sm:gap-4">
-                <header className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="flex">
-                      <CoinIcon name={coinX} className="relative -top-4 w-8" />
-                      <CoinIcon name={coinY} className="relative right-4" />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="font-medium text-blue-800">{name}</span>
-                      <div className="flex items-center gap-x-1 text-gray-900">
-                        <CurveIcon name={curve} className="h-3 w-3" />
-                        <span className="text-sm">{curve}</span>
-                      </div>
+              <section className="grid w-full grid-cols-[12rem_1fr] gap-y-2 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+                <section className="flex items-center">
+                  <div className="flex">
+                    <CoinIcon name={coinX} className="relative -top-4 w-8" />
+                    <CoinIcon name={coinY} className="relative right-4" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm font-medium text-blue-800">{name}</span>
+                    <div className="flex items-center gap-x-1 text-gray-900">
+                      <CurveIcon name={curve} className="h-3 w-3" />
+                      <span className="text-sm">{curve}</span>
                     </div>
                   </div>
-                </header>
+                </section>
 
                 <article>
                   <div className="text-sm text-gray-400">APR</div>
@@ -50,22 +48,22 @@ export default function Rows() {
                   </article>
                 ))}
               </section>
-              <section className="mt-4 flex justify-end gap-x-2">
+              <section className="mt-4 flex sm:justify-end gap-x-2">
                 <button
                   {...(!isOpen && { tabIndex: -1 })}
-                  className="rounded-lg bg-red-400 px-4 py-2 text-xs text-white hover:bg-red-500 sm:w-40 sm:text-sm"
+                  className="w-20 rounded-lg bg-red-400 py-2 text-xs text-white hover:bg-red-500 sm:w-40 sm:text-sm"
                 >
                   Withdraw
                 </button>
                 <button
                   {...(!isOpen && { tabIndex: -1 })}
-                  className="rounded-lg bg-blue-800 px-4 py-2 text-xs text-white hover:bg-blue-900 sm:w-40 sm:text-sm"
+                  className="w-20 rounded-lg bg-blue-800 py-2 text-xs text-white hover:bg-blue-900 sm:w-40 sm:text-sm"
                 >
                   Harvest
                 </button>
                 <button
                   {...(!isOpen && { tabIndex: -1 })}
-                  className="rounded-lg bg-blue-800 px-4 py-2 text-xs text-white hover:bg-blue-900 sm:w-40 sm:text-sm"
+                  className="w-20 rounded-lg bg-blue-800 py-2 text-xs text-white hover:bg-blue-900 sm:w-40 sm:text-sm"
                 >
                   Stake
                 </button>

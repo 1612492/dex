@@ -24,7 +24,7 @@ export default function Rows() {
           {(isOpen) => (
             <Fragment>
               <section className="grid w-full grid-cols-2 gap-y-2 sm:grid-cols-3 sm:gap-4 md:grid-cols-4">
-                <header className="col-span-2 flex sm:col-span-1">
+                <section className="col-span-2 flex sm:col-span-1">
                   <div className="flex">
                     <CoinIcon name={coinX} />
                     <CoinIcon name={coinY} className="relative right-4" />
@@ -36,7 +36,7 @@ export default function Rows() {
                       <span className="text-sm">{curve}</span>
                     </div>
                   </div>
-                </header>
+                </section>
                 {stats.map(({ name, value }, index) => (
                   <article key={index}>
                     <div className="text-sm text-gray-400">{name}</div>
@@ -44,16 +44,16 @@ export default function Rows() {
                   </article>
                 ))}
               </section>
-              <section className="flex justify-end gap-x-2 sm:mt-4">
+              <section className="flex sm:justify-end gap-x-2 mt-4">
                 <button
                   {...(!isOpen && { tabIndex: -1 })}
-                  className="rounded-lg bg-red-400 px-4 py-2 text-xs text-white hover:bg-red-500 sm:w-40 sm:text-sm"
+                  className="w-20 rounded-lg bg-red-400 py-2 text-xs text-white hover:bg-red-500 sm:w-40 sm:text-sm"
                 >
                   Withdraw
                 </button>
                 <button
                   {...(!isOpen && { tabIndex: -1 })}
-                  className="rounded-lg bg-blue-800 px-4 py-2 text-xs text-white hover:bg-blue-900 sm:w-40 sm:text-sm"
+                  className="w-20 rounded-lg bg-blue-800 py-2 text-xs text-white hover:bg-blue-900 sm:w-40 sm:text-sm"
                 >
                   Deposit
                 </button>
