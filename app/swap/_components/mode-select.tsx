@@ -1,6 +1,12 @@
 import { useState } from 'react';
 
+import { SwapMode } from '_common/types';
 import { merge } from '_utils/classes';
+
+type Props = {
+  mode: SwapMode;
+  changeMode: () => void;
+};
 
 export default function ModeSelect() {
   const [active, setActive] = useState(0);

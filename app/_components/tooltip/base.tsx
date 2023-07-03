@@ -3,11 +3,11 @@ import { ReactNode, useState } from 'react';
 import { merge } from '_utils/classes';
 
 type BaseTooltipProps = {
-  hint: ReactNode;
+  content: ReactNode;
   children: ReactNode;
 };
 
-export default function BaseTooltip({ children, hint }: BaseTooltipProps) {
+export default function BaseTooltip({ children, content }: BaseTooltipProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -24,7 +24,7 @@ export default function BaseTooltip({ children, hint }: BaseTooltipProps) {
           isOpen ? 'visible scale-100 opacity-100' : 'invisible scale-75 opacity-0'
         )}
       >
-        {hint}
+        {content}
       </div>
     </button>
   );

@@ -26,13 +26,13 @@ export default function SlippageModal({ open, onClose }: SlippageModalProps) {
           <div className="flex items-center gap-x-1">
             <div className="text-sm sm:text-base">Slippage Tolerance</div>
             <BaseTooltip
-              hint="Your transaction will revert if the price changes unfavorably by more than this
+              content="Your transaction will revert if the price changes unfavorably by more than this
           percentage."
             >
               <InfoIcon className="h-3 w-3 text-gray-900 md:h-5 md:w-5" />
             </BaseTooltip>
           </div>
-          <QuickSelect />
+          <QuickSelect options={['0.5', '1', '2']} />
         </div>
         <section className="mb-4">
           <input className="w-full rounded-lg border border-gray-400 px-4 py-3 text-sm sm:text-lg" />

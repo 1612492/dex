@@ -38,7 +38,7 @@ export default function CoinInput({
       <article className="rounded-lg bg-gray-100 px-3 py-3">
         <div className="flex items-center gap-x-2">
           <div className="text-xs text-gray-900 sm:text-sm">{label}</div>
-          {quickSelect ? <QuickSelect /> : null}
+          {quickSelect ? <QuickSelect options={['25%', '50%', '100%']} /> : null}
         </div>
         <article className="mt-2 flex">
           <input

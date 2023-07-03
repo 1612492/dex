@@ -1,0 +1,44 @@
+{
+  "DAI-USDT": {
+    "address": "DAI-USDT",
+    "name": "DAI-USDT",
+    "coinX": "DAI",
+    "coinY": "USDT",
+    "curve": "Stable"
+  },
+  "BNB-DAI": {
+    "address": "BNB-DAI",
+    "name": "BNB-DAI",
+    "coinX": "BNB",
+    "coinY": "DAI",
+    "curve": "Classic"
+  },
+  "BNB-USDT": {
+    "address": "BNB-USDT",
+    "name": "BNB-USDT",
+    "coinX": "BNB",
+    "coinY": "USDT",
+    "curve": "Classic"
+  },
+  "DAI-ETH": {
+    "address": "DAI-ETH",
+    "name": "DAI-ETH",
+    "coinX": "DAI",
+    "coinY": "ETH",
+    "curve": "Classic"
+  },
+  "ETH-USDT": {
+    "address": "ETH-USDT",
+    "name": "ETH-USDT",
+    "coinX": "ETH",
+    "coinY": "USDT",
+    "curve": "Classic"
+  },
+  "BNB-ETH": {
+    "address": "BNB-ETH",
+    "name": "BNB-ETH",
+    "coinX": "BNB",
+    "coinY": "ETH",
+    "curve": "Classic"
+  }
+}

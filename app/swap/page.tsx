@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { Coin } from '_common/types';
+import { Coin, SwapMode } from '_common/types';
 import CoinInput from '_components/input/coin-input';
 import coins from '_config/coins.json';
 import ReloadIcon from '_images/reload.svg';
@@ -12,6 +12,7 @@ import ModeSelect from './_components/mode-select';
 import Slippage from './_components/slippage';
 
 export default function Page() {
+  const [mode, setMode] = useState(SwapMode.Market);
   const [amountIn, setAmountIn] = useState('');
   const [amountOut, setAmountOut] = useState('');
   const [coinIn, setCoinIn] = useState<Coin | null>(null);
@@ -57,6 +58,17 @@ export default function Page() {
         <button className="w-full rounded-xl bg-blue-800 py-3 text-xs text-white hover:bg-blue-900 sm:text-sm lg:text-base">
           Swap
         </button>
+        <section className="mt-4 rounded bg-gray-100 px-4 py-2">
+          {['Fee', 'Price Impact', 'Minimum Received'].map((value, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-between py-1 text-xs text-gray-900 sm:text-sm"
+            >
+              <div>{value}</div>
+              <div>0</div>
+            </div>
+          ))}
+        </section>
       </section>
     </section>
   );
