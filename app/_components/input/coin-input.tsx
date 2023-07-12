@@ -5,18 +5,20 @@ import CoinIcon from '_components/coin-icon';
 import QuickSelect from '_components/input/quick-select';
 import CoinListModal from '_components/modal/coin-list';
 import ChevronIcon from '_images/chevron.svg';
+import { merge } from '_utils/classes';
 
 type CoinInputProps = {
   label: string;
   amount: string;
-  coins: Coin[];
-  coin: Coin | null;
+  coins?: Coin[];
+  coin?: Coin | null;
   balance: string;
-  onChangeCoin: (coin: Coin) => void;
+  onChangeCoin?: (coin: Coin) => void;
   onChangeAmount: (value: string) => void;
   inputProps?: {
     readOnly?: boolean;
   };
+  disabled?: boolean;
   quickSelect?: boolean;
 };
 
@@ -29,6 +31,7 @@ export default function CoinInput({
   onChangeCoin,
   onChangeAmount,
   inputProps,
+  disabled = false,
   quickSelect = false,
 }: CoinInputProps) {
   const [open, setOpen] = useState(false);
@@ -50,7 +53,11 @@ export default function CoinInput({
           />
           <button
             onClick={() => setOpen(true)}
-            className="flex h-8 min-w-fit items-center gap-x-2 rounded-lg bg-white px-2 py-1 hover:bg-blue-800 hover:text-white sm:h-10"
+            disabled={disabled}
+            className={merge(
+              'flex h-8 min-w-fit items-center gap-x-2 rounded-lg bg-white px-2 py-1 sm:h-10',
+              !disabled && 'hover:bg-blue-800 hover:text-white'
+            )}
           >
             {coin ? (
               <div className="flex items-center gap-x-2">
@@ -60,18 +67,20 @@ export default function CoinInput({
             ) : (
               <div className="text-xs sm:text-sm">Select token</div>
             )}
-            <ChevronIcon className="h-3 w-3 rotate-180 md:h-5 md:w-5" />
+            {disabled ? null : <ChevronIcon className="h-3 w-3 rotate-180 md:h-5 md:w-5" />}
           </button>
         </article>
         <div className="text-xs text-gray-900 sm:text-sm">Balance: {balance}</div>
       </article>
-      <CoinListModal
-        coins={coins}
-        selectedCoin={coin}
-        open={open}
-        onClose={() => setOpen(false)}
-        onSelect={onChangeCoin}
-      />
+      {!disabled && coins && coin && onChangeCoin ? (
+        <CoinListModal
+          coins={coins}
+          selectedCoin={coin}
+          open={open}
+          onClose={() => setOpen(false)}
+          onSelect={onChangeCoin}
+        />
+      ) : null}
     </Fragment>
   );
 }

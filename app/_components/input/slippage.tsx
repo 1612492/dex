@@ -2,9 +2,8 @@
 
 import { Fragment, useState } from 'react';
 
+import SlippageModal from '_components/modal/slippage-modal';
 import EditIcon from '_images/edit.svg';
-
-import SlippageModal from './slippage-modal';
 
 export default function Slippage() {
   const [open, setOpen] = useState(false);

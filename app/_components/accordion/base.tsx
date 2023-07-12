@@ -5,7 +5,7 @@ import ChevronIcon from '_images/chevron.svg';
 import { merge } from '_utils/classes';
 
 type BaseAccordionProps = {
-  children: (isOpen: boolean) => ReactNode;
+  children: ReactNode;
 };
 
 export default function BaseAccordion({ children }: BaseAccordionProps) {
@@ -20,7 +20,7 @@ export default function BaseAccordion({ children }: BaseAccordionProps) {
             isOpen ? 'max-h-80' : 'max-h-0'
           )}
         >
-          {children(isOpen)}
+          {children}
         </div>
         <button
           aria-label="toggle"

@@ -20,7 +20,7 @@ export default function BaseTooltip({ children, content }: BaseTooltipProps) {
       {children}
       <div
         className={merge(
-          'absolute -right-2 top-6 z-10 min-w-[10rem] select-text rounded bg-gray-400 p-2 text-left text-xs text-gray-100 duration-300',
+          'absolute right-0 top-6 z-10 min-w-[10rem] select-text rounded bg-gray-400 p-2 text-left text-xs text-gray-100 duration-300',
           isOpen ? 'visible scale-100 opacity-100' : 'invisible scale-75 opacity-0'
         )}
       >

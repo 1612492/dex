@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { Pool } from '_common/types';
 import CoinIcon from '_components/coin-icon';
 import CurveIcon from '_components/curve-icon';
@@ -43,12 +45,18 @@ export default function Cards() {
             ))}
           </section>
           <section className="mt-4 flex gap-x-2">
-            <button className="flex-1 rounded-lg bg-red-400 py-2 text-xs text-white hover:bg-red-500 sm:text-sm">
+            <Link
+              href={`/remove-liquidity/${address}`}
+              className="flex-1 rounded-lg bg-red-400 py-2 text-center text-xs text-white hover:bg-red-500 sm:text-sm"
+            >
               Withdraw
-            </button>
-            <button className="flex-1 rounded-lg bg-blue-800 py-2 text-xs text-white hover:bg-blue-900 sm:text-sm">
+            </Link>
+            <Link
+              href={`/add-liquidity/${address}`}
+              className="flex-1 rounded-lg bg-blue-800 py-2 text-center text-xs text-white hover:bg-blue-900 sm:text-sm"
+            >
               Deposit
-            </button>
+            </Link>
           </section>
         </article>
       ))}

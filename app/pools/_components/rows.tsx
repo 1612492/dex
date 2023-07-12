@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Fragment } from 'react';
 
 import { Pool } from '_common/types';
@@ -21,45 +22,43 @@ export default function Rows() {
     <section className="flex flex-col gap-y-4">
       {Object.values(pools).map(({ address, name, coinX, coinY, curve }) => (
         <BaseAccordion key={address}>
-          {(isOpen) => (
-            <Fragment>
-              <section className="grid w-full grid-cols-2 gap-y-2 sm:grid-cols-3 sm:gap-4 md:grid-cols-4">
-                <section className="col-span-2 flex sm:col-span-1">
-                  <div className="flex">
-                    <CoinIcon name={coinX} />
-                    <CoinIcon name={coinY} className="relative right-4" />
+          <Fragment>
+            <section className="grid w-full grid-cols-2 gap-y-2 sm:grid-cols-3 sm:gap-4 md:grid-cols-4">
+              <section className="col-span-2 flex sm:col-span-1">
+                <div className="flex">
+                  <CoinIcon name={coinX} />
+                  <CoinIcon name={coinY} className="relative right-4" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-medium text-blue-800">{name}</span>
+                  <div className="flex items-center gap-x-1 text-gray-900">
+                    <CurveIcon name={curve} className="h-3 w-3" />
+                    <span className="text-sm">{curve}</span>
                   </div>
-                  <div className="flex flex-col">
-                    <span className="font-medium text-blue-800">{name}</span>
-                    <div className="flex items-center gap-x-1 text-gray-900">
-                      <CurveIcon name={curve} className="h-3 w-3" />
-                      <span className="text-sm">{curve}</span>
-                    </div>
-                  </div>
-                </section>
-                {stats.map(({ name, value }, index) => (
-                  <article key={index}>
-                    <div className="text-sm text-gray-400">{name}</div>
-                    <div className="text-gray-900">{value}</div>
-                  </article>
-                ))}
+                </div>
               </section>
-              <section className="flex sm:justify-end gap-x-2 mt-4">
-                <button
-                  {...(!isOpen && { tabIndex: -1 })}
-                  className="w-20 rounded-lg bg-red-400 py-2 text-xs text-white hover:bg-red-500 sm:w-40 sm:text-sm"
-                >
-                  Withdraw
-                </button>
-                <button
-                  {...(!isOpen && { tabIndex: -1 })}
-                  className="w-20 rounded-lg bg-blue-800 py-2 text-xs text-white hover:bg-blue-900 sm:w-40 sm:text-sm"
-                >
-                  Deposit
-                </button>
-              </section>
-            </Fragment>
-          )}
+              {stats.map(({ name, value }, index) => (
+                <article key={index}>
+                  <div className="text-sm text-gray-400">{name}</div>
+                  <div className="text-gray-900">{value}</div>
+                </article>
+              ))}
+            </section>
+            <section className="mt-4 flex gap-x-2 sm:justify-end">
+              <Link
+                href={`/remove-liquidity/${address}`}
+                className="w-20 rounded-lg bg-red-400 py-2 text-center text-xs text-white hover:bg-red-500 sm:w-40 sm:text-sm"
+              >
+                Withdraw
+              </Link>
+              <Link
+                href={`/add-liquidity/${address}`}
+                className="w-20 rounded-lg bg-blue-800 py-2 text-center text-xs text-white hover:bg-blue-900 sm:w-40 sm:text-sm"
+              >
+                Deposit
+              </Link>
+            </section>
+          </Fragment>
         </BaseAccordion>
       ))}
     </section>
