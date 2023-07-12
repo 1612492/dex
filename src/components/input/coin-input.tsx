@@ -11,14 +11,14 @@ type CoinInputProps = {
   label: string;
   amount: string;
   coins?: Coin[];
-  coin?: Coin | null;
+  coin: Coin | null;
   balance: string;
   onChangeCoin?: (coin: Coin) => void;
   onChangeAmount: (value: string) => void;
   inputProps?: {
     readOnly?: boolean;
   };
-  disabled?: boolean;
+  noSelectCoin?: boolean;
   quickSelect?: boolean;
 };
 
@@ -31,7 +31,7 @@ export default function CoinInput({
   onChangeCoin,
   onChangeAmount,
   inputProps,
-  disabled = false,
+  noSelectCoin = false,
   quickSelect = false,
 }: CoinInputProps) {
   const [open, setOpen] = useState(false);
@@ -40,7 +40,7 @@ export default function CoinInput({
     <Fragment>
       <article className="rounded-lg bg-gray-100 px-3 py-3">
         <div className="flex items-center gap-x-2">
-          <div className="text-xs text-gray-900 sm:text-sm">{label}</div>
+          <div className="text-sm text-gray-900">{label}</div>
           {quickSelect ? <QuickSelect options={['25%', '50%', '100%']} /> : null}
         </div>
         <article className="mt-2 flex">
@@ -51,36 +51,47 @@ export default function CoinInput({
             className="text-bold w-full bg-gray-100 text-lg outline-0 sm:text-2xl"
             {...inputProps}
           />
-          <button
-            onClick={() => setOpen(true)}
-            disabled={disabled}
-            className={merge(
-              'flex h-8 min-w-fit items-center gap-x-2 rounded-lg bg-white px-2 py-1 sm:h-10',
-              !disabled && 'hover:bg-blue-800 hover:text-white'
-            )}
-          >
-            {coin ? (
-              <div className="flex items-center gap-x-2">
-                <CoinIcon name={coin.symbol} className="h-6 w-6 md:h-8 md:w-8" />
-                <span className="text-xs sm:text-sm">{coin.symbol}</span>
-              </div>
-            ) : (
-              <div className="text-xs sm:text-sm">Select token</div>
-            )}
-            {disabled ? null : <ChevronIcon className="h-3 w-3 rotate-180 md:h-5 md:w-5" />}
-          </button>
+          {noSelectCoin ? (
+            <div className={merge('flex h-10 min-w-fit items-center gap-x-2 px-2 py-1')}>
+              {coin ? (
+                <div className="flex items-center gap-x-2">
+                  <CoinIcon name={coin.symbol} className="h-8 w-8" />
+                  <span className="text-sm">{coin.symbol}</span>
+                </div>
+              ) : null}
+            </div>
+          ) : (
+            <Fragment>
+              <button
+                onClick={() => setOpen(true)}
+                className={merge(
+                  'flex h-10 min-w-fit items-center gap-x-2 rounded-lg bg-white px-2 py-1 hover:bg-blue-800 hover:text-white'
+                )}
+              >
+                {coin ? (
+                  <div className="flex items-center gap-x-2">
+                    <CoinIcon name={coin.symbol} className="h-8 w-8" />
+                    <span className="text-sm">{coin.symbol}</span>
+                  </div>
+                ) : (
+                  <div className="text-sm">Select token</div>
+                )}
+                <ChevronIcon className="h-3 w-3 rotate-180 md:h-5 md:w-5" />
+              </button>
+              {coins && onChangeCoin ? (
+                <CoinModal
+                  coins={coins}
+                  selectedCoin={coin}
+                  open={open}
+                  onClose={() => setOpen(false)}
+                  onSelect={onChangeCoin}
+                />
+              ) : null}
+            </Fragment>
+          )}
         </article>
-        <div className="text-xs text-gray-900 sm:text-sm">Balance: {balance}</div>
+        <div className="text-sm text-gray-900">Balance: {balance}</div>
       </article>
-      {!disabled && coins && coin && onChangeCoin ? (
-        <CoinModal
-          coins={coins}
-          selectedCoin={coin}
-          open={open}
-          onClose={() => setOpen(false)}
-          onSelect={onChangeCoin}
-        />
-      ) : null}
     </Fragment>
   );
 }

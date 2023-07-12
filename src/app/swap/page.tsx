@@ -34,7 +34,7 @@ export default function Page() {
           <ModeSelect value={mode} options={modes} onChange={setMode} />
           <div className="flex items-center">
             <button aria-label="reload" className="rounded-lg p-2 text-gray-900 hover:bg-gray-100">
-              <ReloadIcon className="h-3 w-3 md:h-5 md:w-5" />
+              <ReloadIcon className="h-4 w-4" />
             </button>
           </div>
         </div>
@@ -50,7 +50,7 @@ export default function Page() {
         />
         <div className="flex justify-center py-1">
           <button aria-label="reverse" className="rounded-lg p-1 text-blue-800 hover:bg-gray-100">
-            <ReverseIcon className="h-3 w-3 md:h-5 md:w-5" />
+            <ReverseIcon className="h-4 w-4" />
           </button>
         </div>
         <CoinInput
@@ -64,14 +64,14 @@ export default function Page() {
           inputProps={{ readOnly: true }}
         />
         <Slippage />
-        <button className="w-full rounded-xl bg-blue-800 py-3 text-xs text-white hover:bg-blue-900 sm:text-sm lg:text-base">
+        <button className="w-full rounded-xl bg-blue-800 py-3 text-sm text-white hover:bg-blue-900 lg:text-base">
           Swap
         </button>
         <section className="mt-4 rounded bg-gray-100 px-4 py-2">
           {['Minimum received', 'Price impact', 'Liquidity provider fee'].map((value, index) => (
             <div
               key={index}
-              className="flex items-center justify-between py-1 text-xs text-gray-900 sm:text-sm"
+              className="flex items-center justify-between py-1 text-sm text-gray-900"
             >
               <div>{value}</div>
               <div>0</div>

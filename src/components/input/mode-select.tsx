@@ -22,7 +22,7 @@ export default function ModeSelect<T>({ value, options, onChange }: ModeSelectPr
           onClick={() => onChange(options[index].value)}
           className={merge(
             'px-1',
-            'text-sm sm:text-base',
+            'text-sm lg:text-base',
             value === mode.value ? 'text-blue-800' : 'text-gray-900 hover:text-blue-800'
           )}
         >

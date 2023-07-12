@@ -37,7 +37,7 @@ export default function SlippageModal({ open, onClose }: SlippageModalProps) {
         <section className="mb-4">
           <input className="w-full rounded-lg border border-gray-400 px-4 py-3 text-sm sm:text-lg" />
         </section>
-        <button className="w-full rounded-xl bg-blue-800 py-3 text-xs text-white hover:bg-blue-900 sm:text-sm lg:text-base">
+        <button className="w-full rounded-xl bg-blue-800 py-3 text-sm text-white hover:bg-blue-900 lg:text-base">
           Save
         </button>
       </div>

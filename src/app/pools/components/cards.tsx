@@ -47,13 +47,13 @@ export default function Cards() {
           <section className="mt-4 flex gap-x-2">
             <Link
               href={`/remove-liquidity/${address}`}
-              className="flex-1 rounded-lg bg-red-400 py-2 text-center text-xs text-white hover:bg-red-500 sm:text-sm"
+              className="flex-1 rounded-lg bg-red-400 py-2 text-center text-sm text-white hover:bg-red-500"
             >
               Withdraw
             </Link>
             <Link
               href={`/add-liquidity/${address}`}
-              className="flex-1 rounded-lg bg-blue-800 py-2 text-center text-xs text-white hover:bg-blue-900 sm:text-sm"
+              className="flex-1 rounded-lg bg-blue-800 py-2 text-center text-sm text-white hover:bg-blue-900"
             >
               Deposit
             </Link>

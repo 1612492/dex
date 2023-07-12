@@ -62,7 +62,7 @@ export default function Page() {
                 <section className="mt-4 flex justify-end gap-x-2">
                   <button
                     {...(!isOpen && { tabIndex: -1 })}
-                    className="rounded-lg bg-blue-800 px-4 py-2 text-xs text-white hover:bg-blue-900 sm:w-40 sm:text-sm"
+                    className="rounded-lg bg-blue-800 px-4 py-2 text-sm text-white hover:bg-blue-900 sm:w-40"
                   >
                     View in explorer
                   </button>

@@ -48,13 +48,13 @@ export default function Cards() {
           </section>
 
           <section className="mt-4 grid grid-cols-2 gap-2">
-            <button className="col-span-2 rounded-lg bg-blue-800 py-2 text-xs text-white hover:bg-blue-900 sm:text-sm">
+            <button className="col-span-2 rounded-lg bg-blue-800 py-2 text-sm text-white hover:bg-blue-900">
               Stake
             </button>
-            <button className="rounded-lg bg-red-400 py-2 text-xs text-white hover:bg-red-500 sm:text-sm">
+            <button className="rounded-lg bg-red-400 py-2 text-sm text-white hover:bg-red-500">
               Withdraw
             </button>
-            <button className="rounded-lg bg-blue-800 py-2 text-xs text-white hover:bg-blue-900 sm:text-sm">
+            <button className="rounded-lg bg-blue-800 py-2 text-sm text-white hover:bg-blue-900">
               Harvest
             </button>
           </section>

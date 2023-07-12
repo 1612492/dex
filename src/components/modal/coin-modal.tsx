@@ -30,16 +30,16 @@ export default function CoinModal({
         >
           <ChevronIcon className="h-4 w-4 -rotate-90 text-gray-900 md:h-5 md:w-5" />
         </button>
-        <span className="text-base text-gray-900 sm:text-lg">Select a token</span>
+        <span className="text-lg text-gray-900">Select a token</span>
       </header>
       <section className="px-4 pb-2">
         <input
           placeholder="Search by name or address"
-          className="w-full rounded-lg border border-gray-400 px-4 py-3 text-sm sm:text-lg"
+          className="w-full rounded-lg border border-gray-400 px-4 py-3 sm:text-lg"
         />
       </section>
       <section className="modal-content overflow-y-auto px-4 pb-4">
-        {coins.map((coin) => {
+        {coins?.map((coin) => {
           const active = selectedCoin && selectedCoin.address === coin.address;
 
           return (
@@ -50,23 +50,23 @@ export default function CoinModal({
                 onClose();
               }}
               className={merge(
-                'my-1 flex w-full items-center justify-between rounded-lg px-4 py-2 text-left hover:bg-gray-100',
+                'my-1 flex w-full items-center justify-between rounded-lg p-2 text-left hover:bg-gray-100',
                 active && 'bg-gray-100'
               )}
             >
               <div className="flex items-center gap-x-2">
-                <CoinIcon name={coin.symbol} className="h-6 w-6 md:h-8 md:w-8" />
+                <CoinIcon name={coin.symbol} className="h-10 w-10" />
                 <div>
-                  <div className="text-sm font-medium text-gray-900 sm:text-lg">{coin.symbol}</div>
-                  <div className="flex flex-col gap-x-1 gap-y-2 sm:flex-row sm:items-center">
-                    <div className="text-xs text-gray-600 sm:text-sm">{coin.name}</div>
-                    <div className="rounded bg-gray-200 px-2 text-xs text-gray-900">
+                  <div className="font-medium text-gray-900 sm:text-lg">{coin.symbol}</div>
+                  <div className="flex items-center gap-x-1 gap-y-2">
+                    <div className="text-sm text-gray-600">{coin.name}</div>
+                    <div className="w-fit rounded bg-gray-200 px-2 text-xs text-gray-900">
                       {shorten(coin.address)}
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="text-sm sm:text-lg">100</div>
+              <div className="sm:text-lg">100</div>
             </button>
           );
         })}

@@ -16,11 +16,15 @@ const routes = [
   { name: 'History', path: '/history', Icon: HistoryIcon },
 ];
 
-export default function Routes() {
+type RoutesProps = {
+  className?: string;
+};
+
+export default function Routes({ className }: RoutesProps) {
   const pathname = usePathname();
 
   return (
-    <ul className="flex items-center justify-evenly md:gap-x-4 lg:gap-x-6">
+    <ul className={merge('flex items-center justify-evenly md:gap-x-4 lg:gap-x-6', className)}>
       {routes.map(({ name, path, Icon }, index) => {
         const isActive = path === pathname;
 
@@ -29,7 +33,7 @@ export default function Routes() {
             <Link
               href={path}
               className={merge(
-                'flex items-center gap-x-2 text-xs sm:text-sm lg:text-base',
+                'flex items-center gap-x-2 rounded p-1 text-sm lg:text-base',
                 isActive ? 'text-blue-800' : 'text-gray-900 hover:text-blue-800'
               )}
             >

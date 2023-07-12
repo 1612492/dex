@@ -12,7 +12,7 @@ export default function Accordion({ children }: AccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="overflow-hidden rounded bg-white">
+    <div className="relative overflow-hidden rounded bg-white">
       <div className="flex p-4">
         <div
           className={merge(

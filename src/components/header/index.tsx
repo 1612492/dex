@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import Routes from '~/components/routes';
 import Logo from '~/images/logo.svg';
 import OptionIcon from '~/images/option.svg';
 import { merge } from '~/utils/classes';
@@ -7,7 +8,6 @@ import { merge } from '~/utils/classes';
 import Address from './address';
 import Balance from './balance';
 import Network from './network';
-import Routes from './routes';
 
 export default function Header() {
   return (
@@ -16,9 +16,8 @@ export default function Header() {
         <Link href="/" className="p-1">
           <Logo className="h-8 w-8 text-blue-800" />
         </Link>
-        <div className="hidden md:flex">
-          <Routes />
-        </div>
+
+        <Routes className="hidden md:flex" />
       </nav>
       <div className="flex items-center gap-x-2">
         <Network />
@@ -26,9 +25,9 @@ export default function Header() {
         <Address />
         <button
           aria-label="setting"
-          className="flex items-center justify-center rounded-full p-1 text-gray-900 hover:bg-white"
+          className="flex items-center justify-center rounded-full p-2 text-gray-900 hover:bg-white"
         >
-          <OptionIcon className="h-3 w-3 md:h-5 md:w-5" />
+          <OptionIcon className="h-4 w-4" />
         </button>
       </div>
     </header>

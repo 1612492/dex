@@ -51,19 +51,19 @@ export default function Rows() {
               <section className="mt-4 flex gap-x-2 sm:justify-end">
                 <button
                   {...(!isOpen && { tabIndex: -1 })}
-                  className="w-20 rounded-lg bg-red-400 py-2 text-xs text-white hover:bg-red-500 sm:w-40 sm:text-sm"
+                  className="w-20 rounded-lg bg-red-400 py-2 text-sm text-white hover:bg-red-500 sm:w-40"
                 >
                   Withdraw
                 </button>
                 <button
                   {...(!isOpen && { tabIndex: -1 })}
-                  className="w-20 rounded-lg bg-blue-800 py-2 text-xs text-white hover:bg-blue-900 sm:w-40 sm:text-sm"
+                  className="w-20 rounded-lg bg-blue-800 py-2 text-sm text-white hover:bg-blue-900 sm:w-40"
                 >
                   Harvest
                 </button>
                 <button
                   {...(!isOpen && { tabIndex: -1 })}
-                  className="w-20 rounded-lg bg-blue-800 py-2 text-xs text-white hover:bg-blue-900 sm:w-40 sm:text-sm"
+                  className="w-20 rounded-lg bg-blue-800 py-2 text-sm text-white hover:bg-blue-900 sm:w-40"
                 >
                   Stake
                 </button>

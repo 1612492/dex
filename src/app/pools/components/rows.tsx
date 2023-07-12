@@ -27,7 +27,7 @@ export default function Rows() {
               <section className="grid w-full grid-cols-2 gap-y-2 sm:grid-cols-3 sm:gap-4 md:grid-cols-4">
                 <section className="col-span-2 flex sm:col-span-1">
                   <div className="flex">
-                    <CoinIcon name={coinX} />
+                    <CoinIcon name={coinX} className="h-8 w-8" />
                     <CoinIcon name={coinY} className="relative right-4" />
                   </div>
                   <div className="flex flex-col">
@@ -49,14 +49,14 @@ export default function Rows() {
                 <Link
                   {...(!isOpen && { tabIndex: -1 })}
                   href={`/remove-liquidity/${address}`}
-                  className="w-20 rounded-lg bg-red-400 py-2 text-center text-xs text-white hover:bg-red-500 sm:w-40 sm:text-sm"
+                  className="w-20 rounded-lg bg-red-400 py-2 text-center text-sm text-white hover:bg-red-500 sm:w-40"
                 >
                   Withdraw
                 </Link>
                 <Link
                   {...(!isOpen && { tabIndex: -1 })}
                   href={`/add-liquidity/${address}`}
-                  className="w-20 rounded-lg bg-blue-800 py-2 text-center text-xs text-white hover:bg-blue-900 sm:w-40 sm:text-sm"
+                  className="w-20 rounded-lg bg-blue-800 py-2 text-center text-sm text-white hover:bg-blue-900 sm:w-40"
                 >
                   Deposit
                 </Link>
