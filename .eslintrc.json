@@ -10,6 +10,11 @@
             "pattern": "(react|next/**)",
             "group": "external",
             "position": "before"
+          },
+          {
+            "pattern": "~/**",
+            "group": "internal",
+            "position": "after"
           }
         ],
         "pathGroupsExcludedImportTypes": ["internal"],
